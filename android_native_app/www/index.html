@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta charset="utf-8">
+    <title>Station Builder</title>
+  </head>
+  <body style="margin:0;padding:0">
+    <iframe id="myiframe" style="position:fixed;left:0;right:0;top:0;bottom:0;z-index:0;margin:0;padding:0;border:0;" width="100%" height="100%" src="https://builder.vimarket.io" allowfullscreen>
+    </iframe>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script>
+    document.addEventListener('deviceready', onDeviceReady);
+    function onDeviceReady()
+    {
+      var success = function(status) {
+          console.log('Message: ' + status);
+      }
+
+      var error = function(status) {
+          console.log('Error: ' + status);
+      }
+      // clear cache
+      window.cache.clear( success, error );
+      // request camera permission
+      var permissions = cordova.plugins.permissions;
+      permissions.hasPermission(permissions.CAMERA, checkPermissionCallback, null);
+ 
+      function checkPermissionCallback(status) {
+        if(!status.hasPermission) {
+          var errorCallback = function() {
+            console.warn('Camera permission is not turned on');
+          }
+          var errorCallback = function() {
+            console.log('Camera permission is turned on');
+          }
+       
+          permissions.requestPermission(
+            permissions.CAMERA,
+            function(status) {
+              if(!status.hasPermission) {errorCallback();}
+              else {successCallback();}
+            },
+            errorCallback);
+        }
+      }
+    }
+    if (window.addEventListener) {
+      window.addEventListener ("message", receive, false);        
+    }
+    else {
+      if (window.attachEvent) {
+          window.attachEvent("onmessage",receive, false);
+      }
+    }
+
+    function receive(event) {
+      var data = event.data;
+      if(typeof(navigator[data.func]) === "function"){
+          navigator[data.func].call(null, data.params[0]);
+      }
+    }
+
+    function alertMyMessage(msg) {
+      alert(msg);
+    }
+
+    </script>
+  </body>
+</html>

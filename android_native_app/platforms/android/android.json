@@ -1,0 +1,143 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference name=\"webView\" value=\"org.crosswalk.engine.XWalkWebViewEngine\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference default=\"19+\" name=\"xwalkVersion\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference default=\"xwalk_core_library_canary:17+\" name=\"xwalkLiteVersion\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference default=\"--disable-pull-to-refresh-effect\" name=\"xwalkCommandLine\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference default=\"embedded\" name=\"xwalkMode\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<preference default=\"true\" name=\"xwalkMultipleApk\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Cache\"><param name=\"android-package\" value=\"at.modalog.cordova.plugin.cache.Cache\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Permissions\"><param name=\"android-package\" value=\"com.android.plugins.Permissions\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"morphusSDK\"><param name=\"android-package\" value=\"org.apache.cordova.plugin.morphusSDK\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "cordova-plugin-morphus": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "at.modalog.cordova.plugin.cache": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "cordova-plugin-morphus.morphusSDK",
+            "file": "plugins/cordova-plugin-morphus/www/morphusSDK.js",
+            "pluginId": "cordova-plugin-morphus",
+            "clobbers": [
+                "cordova.plugins.morphusSDK"
+            ]
+        },
+        {
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "id": "at.modalog.cordova.plugin.cache.Cache",
+            "file": "plugins/at.modalog.cordova.plugin.cache/www/Cache.js",
+            "pluginId": "at.modalog.cordova.plugin.cache",
+            "clobbers": [
+                "cache"
+            ]
+        },
+        {
+            "id": "cordova-plugin-android-permissions.Permissions",
+            "file": "plugins/cordova-plugin-android-permissions/www/permissions.js",
+            "pluginId": "cordova-plugin-android-permissions",
+            "clobbers": [
+                "cordova.plugins.permissions"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-whitelist": "1.2.2",
+        "cordova-plugin-crosswalk-webview": "1.8.0",
+        "cordova-plugin-morphus": "0.0.1",
+        "cordova-plugin-splashscreen": "4.0.0",
+        "at.modalog.cordova.plugin.cache": "1.1.0",
+        "cordova-plugin-android-permissions": "0.10.0"
+    }
+}

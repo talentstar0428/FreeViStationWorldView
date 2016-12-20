@@ -1,0 +1,27 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "at.modalog.cordova.plugin.cache": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.exo.freeviStationBuilder"
+        }
+    },
+    "dependent_plugins": {}
+}
